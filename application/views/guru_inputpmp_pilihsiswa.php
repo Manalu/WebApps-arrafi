@@ -161,6 +161,9 @@
 							</div>
 							</center>
 							<center>
+								<?php print("Baba") ?>
+
+							
 							<div class="dataTable_wrapper">
                                 <table id="datatable" class="table table-striped table-bordered">
                                     <thead>
@@ -172,7 +175,8 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-									<?php foreach($list->result() as $row){ ?>
+                                    	
+									<?php foreach($this->result() as $row){ ?>
                                         <tr class="odd gradeX">
                                             <td><?php echo $row->nis; ?></td>
                                             <td><?php echo $row->nama; ?></td>
@@ -201,6 +205,7 @@
 									<?php } ?>
                                     </tbody>
                                 </table>
+                                
                             </div>
 							<div style="margin:auto; border-radius: 50px; height:50px; display:block;">
                                 	<a href="<?php echo base_url()?>index.php/guru/wali_laporanpmp?idmapel=<?php echo $_GET['idmapel']; ?>&namamapel=<?php echo $_GET['namamapel']; ?>&idkelas=<?php echo $_GET['idkelas']; ?>&kelas=<?php echo $_GET['kelas']; ?>&semester=<?php echo $_GET['semester']; ?>&thnajar=<?php echo $_GET['thnajar']; ?>&tingkat=<?php echo $_GET['tingkat']; ?>"> <button type="button" class="btn btn-warning" target="_blank"><img src="<?php echo base_url(); ?>logo/icon_180.png" style="height:30px; width:30px;"/> Laporan PMP</button></a>

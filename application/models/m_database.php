@@ -155,7 +155,7 @@ class M_database extends CI_Model {
 	{
 	$thnajar=$this->thnajar();
 		$query=$this->db->query
-		("select s.nama,s.nis,if((select ROUND(nilai,2) from pmp where nis=s.nis and idmapel='".$_GET['idmapel']."' and semester=".$_GET['semester']." and thnajar='$thnajar') is null,'',(select ROUND(nilai,2) from pmp where nis=s.nis and idmapel='".$_GET['idmapel']."' and semester=".$_GET['semester']." and thnajar='$thnajar')) as nilai, if((select round(skor,2) from pmp where nis=s.nis and idmapel='".$_GET['idmapel']."' and semester=".$_GET['semester']." and thnajar='$thnajar') is null,'',(select round(skor,2) from pmp where nis=s.nis and idmapel='".$_GET['idmapel']."' and semester=".$_GET['semester']." and thnajar='$thnajar')) as skor from siswa s
+		("select s.nama,s.nis,if((select ROUND(nilai,2) from pmp where nis=s.nis and idmapel='".$_GET['idmapel']."' and semester=".$_GET['semester']." and thnajar='$thnajar') is null,'',(select ROUND(nilai,2) from pmp where ks.nis=s.nis and idmapel='".$_GET['idmapel']."' and semester=".$_GET['semester']." and thnajar='$thnajar')) as nilai, if((select round(skor,2) from pmp where ks.nis=s.nis and idmapel='".$_GET['idmapel']."' and semester=".$_GET['semester']." and thnajar='$thnajar') is null,'',(select round(skor,2) from pmp where ks.nis=s.nis and idmapel='".$_GET['idmapel']."' and semester=".$_GET['semester']." and thnajar='$thnajar')) as skor from siswa s
 		join kelas_siswa ks on(ks.nis=s.nis)
 		join kelas k on(ks.idkelas=k.idkelas)
 		where k.idkelas='".$_GET['idkelas']."' and ks.thnajar='$thnajar'");
